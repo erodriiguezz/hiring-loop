@@ -1,0 +1,76 @@
+{
+  "schema": "arcade/v0",
+  "title": "Hiring Loop",
+  "description": "You applied. 4,000 other people applied. Get one job candidate through eight interview rounds, from resume screening to the in-person on-site, in a rage platformer where the floor drops, the recruiter ghosts you, the requirements pivot mid-jump, and every death is a rejection email.\nEach round is worse than the last. Made the day I got rejected from five roles.",
+  "tags": [
+    "platformer",
+    "rage",
+    "troll",
+    "pixel-art",
+    "short-session",
+    "job-hunt",
+    "satire"
+  ],
+  "controls": "Left/Right or A/D move, Space/W/Up jump (hold for higher), R restart round, P or Esc pause, M mute. On phones: on-screen left/right pad, JUMP, pause and restart buttons.",
+  "input": {
+    "keyboard_mouse": true,
+    "gamepad": false,
+    "touch": true,
+    "tilt": false
+  },
+  "profile_saves": false,
+  "leaderboards": [],
+  "play": {
+    "root": ".",
+    "entry": "index.html"
+  },
+  "thumbnail": "media/thumbnail.png",
+  "screenshots": [
+    "media/screenshot-1.png",
+    "media/screenshot-2.png",
+    "media/screenshot-3.png",
+    "media/screenshot-4.png"
+  ],
+  "orientation": "landscape",
+  "slug": "hiring-loop",
+  "lineage": {
+    "kind": "fork",
+    "parents": [
+      {
+        "slug": "haunt-loop",
+        "generation": "01m4etx7qvcxvx1v17scdpbw37",
+        "version": 1
+      }
+    ]
+  },
+  "provenance": {
+    "process": "iterated",
+    "subagent_models": [],
+    "prompt": "New game. The core concept is the same, but instead of a ghost it's a job candidate's journey through a very aggressive job market. I just got rejected from 5 roles today and I want to show how frustrating that is. The candidate has to pass every obstacle to get to work at the company; make it really hard to pass. Each level is an interview step and it gets incrementally worse: 1 screening, 2 recruiter, 3 assessment, 4 live coding, 5 system design, 6 manager screening, 7 CEO/CTO screening, 8 in-person interview (a completely new environment, maybe outdoors). Same controls and responsiveness. Create a demo video.",
+    "prompt_log": [
+      "Go with the name hiring-loop.",
+      "Let's make steps 1-5 harder."
+    ],
+    "notes": "Kept Haunt Loop's engine untouched: physics constants, controls, touch layout, the trap system and the level verifier. Changed: the ghost is now a job candidate in a suit; six levels became eight interview rounds; deaths are rejections with rejection-email taunts; rounds 1-7 are a late-night office, round 8 (on-site) is a new outdoor scene with grass, traffic cones and the HQ on the horizon. New trap types: chase (a deadline wall that slides in), reverse (a pivot that flips your controls), plus traps that only arm after 1 or 2 deaths in a round. Every round's winning route was found by a beam search over the game's own sim and is checked by tools/verify-levels.mjs, so each round is hard but proven beatable. Demo, thumbnail and screenshots were recorded from ?autopilot, which replays those verified inputs frame by frame; no human play is shown.",
+    "orchestrator": {
+      "model": "Opus 5.5",
+      "model_id": "claude-opus-5-5",
+      "harness": "Claude Code"
+    }
+  },
+  "demo_video": "media/demo.mp4",
+  "preview_video": "media/preview.mp4",
+  "preview_gif": "media/preview.gif",
+  "media_vertical": {
+    "thumbnail": "media/vertical/thumbnail.jpg",
+    "screenshots": [
+      "media/vertical/shot-1.jpg",
+      "media/vertical/shot-2.jpg",
+      "media/vertical/shot-3.jpg",
+      "media/vertical/shot-4.jpg"
+    ],
+    "demo_video": "media/vertical/demo.mp4",
+    "preview_video": "media/vertical/preview.mp4",
+    "preview_gif": "media/vertical/preview.gif"
+  }
+}
